@@ -1,5 +1,6 @@
 import csv
 import json
+import yaml
 
 indent = 2
 
@@ -27,12 +28,27 @@ def create_json(id):
         json_file.close()
 
 
-if __name__ == '__main__':
-    id = 'firstTest'
-    str = 'ad,japanese_calendar,theater,sports_acilities,other,golf_course,mahjong,pachinko\n2011,H23,20,6,44,33,215,212\n2012,H24,18,6,43,34,209,208\n2013,H25,19,6,43,33,185,204\n2014,H26,20,6,43,32,191,199\n2015,H27,18,6,43,32,146,189'
-    creat_csv(id, str)
-    create_json(id)
+def create_yaml(id):
+    result = []
+    dict = {'id': id}
+    with open('../testSheets/' + id + '.csv', 'r') as csv_file:
+        reader = csv.DictReader(csv_file)
 
+        for line in reader:
+            yaml_line = yaml.dump(line)
+            result.append(line)
+        dict["items"] = result
+        yaml_file = open('../testSheets/' + id + '.yml', 'w')
+        yaml.dump(dict, yaml_file)
+        yaml_file.close()
+
+
+# if __name__ == '__main__':
+#     id = 'firstTest'
+#     str = 'ad,japanese_calendar,theater,sports_acilities,other,golf_course,mahjong,pachinko\n2011,H23,20,6,44,33,215,212\n2012,H24,18,6,43,34,209,208\n2013,H25,19,6,43,33,185,204\n2014,H26,20,6,43,32,191,199\n2015,H27,18,6,43,32,146,189'
+#     creat_csv(id, str)
+#     create_json(id)
+#     create_yaml(id)
     # json_file = open('../testSheets/test.json', 'r')
     # dict = json.load(json_file)
     # for item in dict["items"]:
