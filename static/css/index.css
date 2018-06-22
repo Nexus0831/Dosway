@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: 'hannari';
+  src: url(../font/Hannari.otf) format('opentype');
+}
+
+.my-title {
+    font-family: 'HannariMincho' !important;
+}
