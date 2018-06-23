@@ -10,19 +10,74 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-{#    <link href="https://fonts.googleapis.com/earlyaccess/hannari.css" rel="stylesheet"/>#}
     <link rel="stylesheet" href="/static/css/index.css">
-    <title>Dosway</title>
+    <title>どすウェイ</title>
 </head>
 <body>
 <nav>
     <div class="nav-wrapper pink darken-1">
-        <span class="brand-logo center" style="font-family: 'Hannari'">どすウェイ</span>
+        <span class="brand-logo center" style="font-family: 'HannariMincho'">どすウェイ</span>
     </div>
 </nav>
-<h4 class="my-title">
-    オープンデータのフォーマットはJSON以外ありえねぇから！！
-</h4>
+<div class="grid-container">
+    <div class="flex-container child">
+        <h4 class="my-title">
+            オープンデータのフォーマットはJSON以外ありえへんどすえ
+        </h4>
+        <div class="card">
+            <div class="card-container">
+                <div class="card-title">
+                  <span class="my-title">注意事項どすえ</span>
+                </div>
+
+                <div class="card-contents">
+                    <div class="kyoto considerations">
+                        入力するデータは<strong>英語</strong>もしくは数字で入力してなぁ
+                    </div>
+                    <div class="kyoto considerations">
+                        最低でも意味のある<strong>英単語</strong>にしてなぁほんまに
+                    </div>
+                    <div class="kyoto considerations">
+                        「a1」とか許容せえへんどすえ
+                    </div>
+                </div>
+
+                <div class="card-form">
+                    <div class="filed-container">
+                        <span class="kyoto filed-label">
+                            タイトル
+                        </span>
+                        <div class="input-field" style="width: 50%">
+                            <input type="text" id="autocomplete-input" class="autocomplete"/>
+                            <label for="autocomplete-input" class="kyoto">
+                                意味のわかるタイトルにしてなぁ
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filed-container">
+                        <span class="kyoto filed-label">
+                            データ項目数
+                        </span>
+                        <div class="input-field" style="width: 50%">
+                            <input type="text" id="autocomplete-input" class="autocomplete"/>
+                            <label for="autocomplete-input" class="kyoto">
+                                入力するデータの種類の数（列）やで
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-button">
+                    <button class="waves-effect waves-light btn kyoto pink darken-1">
+                        決定
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
 
 </body>
 </html>
