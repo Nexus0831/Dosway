@@ -5,6 +5,10 @@ body {
     background-color: #eeeeee;
 }
 
+select:invalid {
+    background-color: #9C1A1C;
+}
+
 @font-face {
   font-family: 'hannari';
   src: url(../font/Hannari.otf) format('opentype');
@@ -55,6 +59,7 @@ body {
 
 .card-contents {
     /*height: 100%;*/
+    width: 100%;
     grid-row: 2 / 3;
     grid-column: 2 / 3;
     display: flex;

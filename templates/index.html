@@ -31,26 +31,34 @@
                 </div>
 
                 <div class="card-contents">
-                    <div class="kyoto considerations">
-                        入力するデータは<strong>英語</strong>もしくは数字で入力してなぁ
-                    </div>
-                    <div class="kyoto considerations">
-                        最低でも意味のある<strong>英単語</strong>にしてなぁほんまに
-                    </div>
-                    <div class="kyoto considerations">
-                        「a1」とか許容せえへんどすえ
-                    </div>
+                    <ul>
+                        <li>
+                            <div class="kyoto considerations">
+                                入力するデータは<b><u>英数字</u></b>だけで入力してなぁ。
+                            </div>
+                        </li>
+                        <li>
+                            <div class="kyoto considerations">
+                                最低でも意味のある<b><u>英単語</u></b>にしてなぁほんまに。
+                            </div>
+                        </li>
+                        <li>
+                            <div class="kyoto considerations">
+                                <b><u>「a1」</u></b>とか許容せえへんどすえ。
+                            </div>
+                        </li>
+                    </ul>
                 </div>
 
-                <div class="card-form">
+                <form class="card-form" id="card-form" method="post">
                     <div class="filed-container">
                         <span class="kyoto filed-label">
                             タイトル
                         </span>
                         <div class="input-field" style="width: 50%">
-                            <input type="text" id="autocomplete-input" class="autocomplete"/>
+                            <input type="text" name="title" id="autocomplete-input" class="autocomplete validate" pattern="^([a-zA-Z0-9]{8,})$" required/>
                             <label for="autocomplete-input" class="kyoto">
-                                意味のわかるタイトルにしてなぁ
+                                意味のわかるタイトルにしてなぁ 最低でも8文字以上やで
                             </label>
                         </div>
                     </div>
@@ -60,24 +68,26 @@
                             データ項目数
                         </span>
                         <div class="input-field" style="width: 50%">
-                            <input type="text" id="autocomplete-input" class="autocomplete"/>
+                            <input type="text" name="column" id="autocomplete-input" class="autocomplete validate" pattern="^[0-9]+$" required/>
                             <label for="autocomplete-input" class="kyoto">
                                 入力するデータの種類の数（列）やで
                             </label>
                         </div>
                     </div>
-                </div>
-                <div class="card-button">
-                    <button class="waves-effect waves-light btn kyoto pink darken-1">
-                        決定
-                    </button>
-                </div>
+
+                    <div class="card-button">
+                        <button class="waves-effect waves-light btn kyoto pink darken-1" id="first" type="submit">
+                            決定
+                        </button>
+                    </div>
+                </form>
             </div>
 
         </div>
     </div>
 </div>
-
-
+{#<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">#}
+{#<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>#}
+<script type="application/javascript" src="/static/js/index.js"></script>
 </body>
 </html>
