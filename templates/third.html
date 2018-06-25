@@ -16,11 +16,19 @@
             </div>
         {% endfor %}
 
-        <div class="card-button">
-            <button class="waves-effect waves-light btn kyoto pink darken-1" id="third" type="submit">
-                要素の値を追加
-            </button>
-        </div>
+        <button class="waves-effect waves-light btn kyoto pink darken-1" id="third" type="submit">
+            要素の値を追加
+        </button>
+    </form>
+{% endblock %}
+
+{% block submit %}
+    <form method="post" id="last-form" class="card-button" action={{ url_for('download') }}>
+        <input type="hidden" name="title" required>
+        <input type="hidden" name="text" required>
+        <button class="waves-effect waves-light btn kyoto pink darken-1" id="third" type="submit">
+            オープンデータファイルを作成
+        </button>
     </form>
 {% endblock %}
 

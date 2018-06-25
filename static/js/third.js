@@ -15,3 +15,11 @@ $('#third-form').submit(function (event) {
     console.log(localStorage.getItem('text'));
     return false
 });
+
+$('#last-form').submit(function (event) {
+   const title = document.getElementsByName('title')[0];
+   const text = document.getElementsByName('text')[0];
+
+   title.value = localStorage.getItem('title');
+   text.value = localStorage.getItem('text');
+});

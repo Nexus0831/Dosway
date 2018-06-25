@@ -1,3 +1,5 @@
+import os
+
 import json_convert
 from flask import Flask, request
 from flask import render_template
@@ -22,6 +24,16 @@ def item_name():
 def element_name():
     names = request.form.getlist('key-names[]')
     return render_template('third.html', names=names);
+
+
+@app.route('/download', methods=['POST'])
+def download():
+    title = request.form['title']
+    text = request.form['text']
+    json_convert.convert.create_csv(title, text, app.root_path)
+    json_convert.convert.create_json(title, app.root_path)
+
+    return render_template('first.html')
 
 
 if __name__ == '__main__':

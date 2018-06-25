@@ -7,6 +7,9 @@ static/font/*
 #tests
 testSheets/*
 
+#downloadfiles
+download/*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

@@ -1,6 +1,7 @@
 import csv
 import json
 import yaml
+import os
 
 indent = 2
 
@@ -9,36 +10,36 @@ def get_indent():
     return " " * indent
 
 
-def creat_csv(id, content):
-    with open('../testSheets/' + id + '.csv', 'w') as csv_file:
+def create_csv(title, content, root_path):
+    with open(root_path + '/download/' + title + '.csv', 'w') as csv_file:
         csv_file.write(content)
 
 
-def create_json(id):
+def create_json(title, root_path):
     result = []
-    dict = {'id': id}
-    with open('../testSheets/' + id + '.csv', 'r') as csv_file:
+    dict = {'id': title}
+    with open(root_path + '/download/' + title + '.csv', 'r') as csv_file:
         reader = csv.DictReader(csv_file)
 
         for line in reader:
             result.append(line)
         dict["items"] = result
-        json_file = open('../testSheets/' + id + '.json', 'w')
+        json_file = open(root_path + '/download/' + title + '.json', 'w')
         json.dump(dict, json_file, indent=4, sort_keys=True, separators=(',', ': '))
         json_file.close()
 
 
-def create_yaml(id):
+def create_yaml(title):
     result = []
-    dict = {'id': id}
-    with open('../testSheets/' + id + '.csv', 'r') as csv_file:
+    dict = {'id': title}
+    with open('../testSheets/' + title + '.csv', 'r') as csv_file:
         reader = csv.DictReader(csv_file)
 
         for line in reader:
             yaml_line = yaml.dump(line)
             result.append(line)
         dict["items"] = result
-        yaml_file = open('../testSheets/' + id + '.yml', 'w')
+        yaml_file = open('../testSheets/' + title + '.yml', 'w')
         yaml.dump(dict, yaml_file)
         yaml_file.close()
 
