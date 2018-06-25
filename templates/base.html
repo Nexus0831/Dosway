@@ -50,44 +50,14 @@
                     </ul>
                 </div>
 
-                <form class="card-form" id="card-form" method="post">
-                    <div class="filed-container">
-                        <span class="kyoto filed-label">
-                            タイトル
-                        </span>
-                        <div class="input-field" style="width: 50%">
-                            <input type="text" name="title" id="autocomplete-input" class="autocomplete validate" pattern="^([a-zA-Z0-9]{8,})$" required/>
-                            <label for="autocomplete-input" class="kyoto">
-                                意味のわかるタイトルにしてなぁ 最低でも8文字以上やで
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="filed-container">
-                        <span class="kyoto filed-label">
-                            データ項目数
-                        </span>
-                        <div class="input-field" style="width: 50%">
-                            <input type="text" name="column" id="autocomplete-input" class="autocomplete validate" pattern="^[0-9]+$" required/>
-                            <label for="autocomplete-input" class="kyoto">
-                                入力するデータの種類の数（列）やで
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="card-button">
-                        <button class="waves-effect waves-light btn kyoto pink darken-1" id="first" type="submit">
-                            決定
-                        </button>
-                    </div>
-                </form>
+                {% block form %}
+                {% endblock %}
             </div>
 
         </div>
     </div>
 </div>
-{#<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">#}
-{#<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>#}
-<script type="application/javascript" src="/static/js/index.js"></script>
+{% block script %}
+{% endblock %}
 </body>
 </html>

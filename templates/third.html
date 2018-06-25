@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block form %}
+    <form class="card-form" id="third-form" method="post">
+        {% for name in names %}
+            <div class="filed-container">
+                <span class="kyoto filed-label">
+                    {{ name }}
+                </span>
+                <div class="input-field" style="width: 50%">
+                    <input type="text" name="elements" id="autocomplete-input" class="autocomplete validate"
+                           pattern="^[a-zA-Z0-9]+$" required/>
+                    <label for="autocomplete-input" class="kyoto">
+                        {{ name }}の値やでぇ、英数字のみで入力してな
+                    </label>
+                </div>
+            </div>
+        {% endfor %}
+
+        <div class="card-button">
+            <button class="waves-effect waves-light btn kyoto pink darken-1" id="third" type="submit">
+                要素の値を追加
+            </button>
+        </div>
+    </form>
+{% endblock %}
+
+{% block script %}
+    <script type="application/javascript" src="/static/js/third.js"></script>
+{% endblock %}
