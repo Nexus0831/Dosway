@@ -22,5 +22,5 @@ $('#last-form').submit(function (event) {
 
    title.value = localStorage.getItem('title');
    text.value = localStorage.getItem('text');
-   // localStorage.clear()
+   localStorage.clear()
 });
