@@ -1,6 +1,5 @@
 import converter
-from flask import Flask, request
-from flask import render_template
+from flask import Flask, request, render_template, send_file
 
 app = Flask(__name__)
 
@@ -33,7 +32,10 @@ def download():
     converter.convert.create_yaml(title, app.root_path)
     converter.convert.create_zip(title, app.root_path)
 
-    return render_template('first.html')
+    download_file_name = app.root_path + '/download/' + title + '.zip'
+    download_file = title + '.zip'
+
+    return send_file(download_file_name, as_attachment=True, attachment_filename=download_file, mimetype='application/zip')
 
 
 if __name__ == '__main__':
