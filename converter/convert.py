@@ -1,12 +1,14 @@
 import csv
 import json
 import yaml
+import xml
 import zipfile
+import os
 import collections
 
 indent = 2
 
-file_format = ('csv', 'json', 'yml', 'xml')
+file_formats = ('.csv', '.json', '.yml')
 
 
 def get_indent():
@@ -52,9 +54,9 @@ def create_yaml(title, root_path):
 def create_zip(title, root_path):
     base_dir = root_path + '/download/' + title
     with zipfile.ZipFile(base_dir + '.zip', 'w', compression=zipfile.ZIP_DEFLATED) as new_zip:
-        new_zip.write(base_dir + '.csv', arcname=title + '.csv')
-        new_zip.write(base_dir + '.json', arcname=title + '.json')
-        new_zip.write(base_dir + '.yml', arcname=title + 'yml')
+        for file_format in file_formats:
+            new_zip.write(base_dir + file_format, arcname=title + file_format)
+            os.remove(base_dir + file_format)
         # new_zip.write(base_dir + '.xml', arcname=title + '.xml')
 
 # if __name__ == '__main__':
