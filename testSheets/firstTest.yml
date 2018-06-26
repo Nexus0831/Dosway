@@ -1,47 +1,12 @@
 id: firstTest
 items:
-- !!python/object/apply:collections.OrderedDict
-  - - [ad, '2011']
-    - [japanese_calendar, H23]
-    - [theater, '20']
-    - [sports_acilities, '6']
-    - [other, '44']
-    - [golf_course, '33']
-    - [mahjong, '215']
-    - [pachinko, '212']
-- !!python/object/apply:collections.OrderedDict
-  - - [ad, '2012']
-    - [japanese_calendar, H24]
-    - [theater, '18']
-    - [sports_acilities, '6']
-    - [other, '43']
-    - [golf_course, '34']
-    - [mahjong, '209']
-    - [pachinko, '208']
-- !!python/object/apply:collections.OrderedDict
-  - - [ad, '2013']
-    - [japanese_calendar, H25]
-    - [theater, '19']
-    - [sports_acilities, '6']
-    - [other, '43']
-    - [golf_course, '33']
-    - [mahjong, '185']
-    - [pachinko, '204']
-- !!python/object/apply:collections.OrderedDict
-  - - [ad, '2014']
-    - [japanese_calendar, H26]
-    - [theater, '20']
-    - [sports_acilities, '6']
-    - [other, '43']
-    - [golf_course, '32']
-    - [mahjong, '191']
-    - [pachinko, '199']
-- !!python/object/apply:collections.OrderedDict
-  - - [ad, '2015']
-    - [japanese_calendar, H27]
-    - [theater, '18']
-    - [sports_acilities, '6']
-    - [other, '43']
-    - [golf_course, '32']
-    - [mahjong, '146']
-    - [pachinko, '189']
+- {ad: '2011', japanese_calendar: H23, theater: '20', sports_acilities: '6', other: '44',
+  golf_course: '33', mahjong: '215', pachinko: '212'}
+- {ad: '2012', japanese_calendar: H24, theater: '18', sports_acilities: '6', other: '43',
+  golf_course: '34', mahjong: '209', pachinko: '208'}
+- {ad: '2013', japanese_calendar: H25, theater: '19', sports_acilities: '6', other: '43',
+  golf_course: '33', mahjong: '185', pachinko: '204'}
+- {ad: '2014', japanese_calendar: H26, theater: '20', sports_acilities: '6', other: '43',
+  golf_course: '32', mahjong: '191', pachinko: '199'}
+- {ad: '2015', japanese_calendar: H27, theater: '18', sports_acilities: '6', other: '43',
+  golf_course: '32', mahjong: '146', pachinko: '189'}

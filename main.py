@@ -1,6 +1,4 @@
-import os
-
-import json_convert
+import converter
 from flask import Flask, request
 from flask import render_template
 
@@ -30,8 +28,10 @@ def element_name():
 def download():
     title = request.form['title']
     text = request.form['text']
-    json_convert.convert.create_csv(title, text, app.root_path)
-    json_convert.convert.create_json(title, app.root_path)
+    converter.convert.create_csv(title, text, app.root_path)
+    converter.convert.create_json(title, app.root_path)
+    converter.convert.create_yaml(title, app.root_path)
+    converter.convert.create_zip(title, app.root_path)
 
     return render_template('first.html')
 
