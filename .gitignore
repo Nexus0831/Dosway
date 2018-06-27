@@ -1,9 +1,6 @@
 #Pycharm
 .idea
 
-#fonts
-static/font/*
-
 #tests
 testSheets/*
 

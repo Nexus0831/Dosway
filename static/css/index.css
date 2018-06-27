@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: 'HannariMincho';
-  src: url(/.fonts/Hannari.otf) format('opentype');
+  src: url(../font/Hannari.otf) format('opentype');
 }
 
 html {
