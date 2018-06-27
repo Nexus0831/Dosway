@@ -28,7 +28,7 @@ def item_names():
 def download():
     file_name = request.form['title']
     text = request.form['text']
-    base_dir = app.root_path + '/download/'
+    base_dir = '/tmp/'
 
     converter.convert.remove_files(base_dir)
     converter.convert.create_csv(file_name, text, base_dir)
