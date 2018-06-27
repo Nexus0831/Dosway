@@ -14,7 +14,7 @@ select:invalid {
 
 @font-face {
   font-family: 'HannariMincho';
-  src: url(/app/.fonts/Hannari.otf) format('opentype');
+  src: url(~/.fonts/Hannari.otf) format('opentype');
 }
 
 .my-title {
