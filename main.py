@@ -12,29 +12,31 @@ def index():
 @app.route('/itemName', methods=['POST'])
 def item_name():
     count = int(request.form['column'])
-    # ToDo: 配列に変換
     column_count = [i+1 for i in range(count)]
+
     return render_template('second.html', column_count=column_count)
 
 
 @app.route('/elementName', methods=['POSt'])
 def element_name():
     names = request.form.getlist('key-names[]')
-    return render_template('third.html', names=names);
+
+    return render_template('third.html', names=names)
 
 
 @app.route('/download', methods=['POST'])
 def download():
-    title = request.form['title']
+    file_name = request.form['title']
     text = request.form['text']
-    converter.convert.create_csv(title, text, app.root_path)
-    converter.convert.create_tsv(title, text, app.root_path)
-    converter.convert.create_json(title, app.root_path)
-    converter.convert.create_yaml(title, app.root_path)
-    converter.convert.create_zip(title, app.root_path)
+    base_dir = app.root_path + '/download/'
+    converter.convert.create_csv(file_name, text, base_dir)
+    converter.convert.create_tsv(file_name, text, base_dir)
+    converter.convert.create_json(file_name, base_dir)
+    converter.convert.create_yaml(file_name, base_dir)
+    converter.convert.create_zip(file_name, base_dir)
 
-    download_file_name = app.root_path + '/download/' + title + '.zip'
-    download_file = title + '.zip'
+    download_file_name = base_dir + file_name + '.zip'
+    download_file = file_name + '.zip'
 
     return send_file(download_file_name, as_attachment=True, attachment_filename=download_file, mimetype='application/zip')
 

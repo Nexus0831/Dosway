@@ -23,13 +23,27 @@
 {% endblock %}
 
 {% block submit %}
-    <form method="post" id="last-form" class="card-button" action={{ url_for('download') }}>
-        <input type="hidden" name="title" required>
-        <input type="hidden" name="text" required>
-        <button class="waves-effect waves-light btn kyoto pink darken-1" id="third" type="submit">
-            オープンデータファイルを作成
-        </button>
-    </form>
+    <div class="card-bottom">
+      <table class="custom-table striped centered responsive-table">
+        <thead>
+          <tr>
+              {% for name in names %}
+                  <th>{{ name }}</th>
+              {% endfor %}
+          </tr>
+        </thead>
+
+        <tbody id="table-body">
+        </tbody>
+      </table>
+        <form method="post" id="last-form" action={{ url_for('download') }}>
+            <input type="hidden" name="title" required>
+            <input type="hidden" name="text" required>
+            <button class="waves-effect waves-light btn kyoto pink darken-1" id="third" type="submit">
+                オープンデータファイルを作成
+            </button>
+        </form>
+    </div>
 {% endblock %}
 
 {% block script %}

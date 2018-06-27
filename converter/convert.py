@@ -15,26 +15,26 @@ def get_indent():
     return " " * indent
 
 
-def create_csv(title, content, root_path):
-    with open(root_path + '/download/' + title + '.csv', 'w', encoding='utf-8') as csv_file:
+def create_csv(file_name, content, folder_path):
+    with open(folder_path + file_name + '.csv', 'w', encoding='utf-8') as csv_file:
         csv_file.write(content)
 
 
-def create_tsv(title, content, root_path):
-    with open(root_path + '/download/' + title + '.tsv', 'w', encoding='utf-8') as tsv_file:
+def create_tsv(file_name, content, folder_path):
+    with open(folder_path + file_name + '.tsv', 'w', encoding='utf-8') as tsv_file:
         tsv_file.write(content.replace(',', '   '))
 
 
-def create_json(title, root_path):
+def create_json(file_name, folder_path):
     result = []
-    dict = {'id': title}
-    with open(root_path + '/download/' + title + '.csv', 'r', encoding='utf-8') as csv_file:
+    dict = {'id': file_name}
+    with open(folder_path + file_name + '.csv', 'r', encoding='utf-8') as csv_file:
         reader = csv.DictReader(csv_file)
 
         for line in reader:
             result.append(line)
         dict["items"] = result
-        json_file = open(root_path + '/download/' + title + '.json', 'w', encoding='utf-8')
+        json_file = open(folder_path + file_name + '.json', 'w', encoding='utf-8')
         json.dump(dict, json_file, indent=4, sort_keys=True, separators=(',', ': '), ensure_ascii=False)
         json_file.close()
 
@@ -43,25 +43,24 @@ def represent_odict(dumper, instance):
     return dumper.represent_mapping('tag:yaml.org,2002:map', instance.items())
 
 
-def create_yaml(title, root_path):
+def create_yaml(file_name, folder_path):
     result = []
-    dict = {'id': title}
-    with open(root_path + '/download/' + title + '.csv', 'r', encoding='utf-8') as csv_file:
+    dict = {'id': file_name}
+    with open(folder_path + file_name + '.csv', 'r', encoding='utf-8') as csv_file:
         reader = csv.DictReader(csv_file)
         yaml.add_representer(collections.OrderedDict, represent_odict)
         for line in reader:
             result.append(line)
         dict["items"] = result
-        yaml_file = open(root_path + '/download/' + title + '.yml', 'w', encoding='utf-8')
-        yaml.dump(dict, yaml_file, allow_unicode=True)
+        yaml_file = open(folder_path + file_name + '.yml', 'w', encoding='utf-8')
+        yaml.dump(dict, yaml_file, allow_unicode=True, default_flow_style=False)
 
 
-def create_zip(title, root_path):
-    base_dir = root_path + '/download/' + title
-    with zipfile.ZipFile(base_dir + '.zip', 'w', compression=zipfile.ZIP_DEFLATED) as new_zip:
+def create_zip(file_name, folder_path):
+    with zipfile.ZipFile(folder_path + file_name + '.zip', 'w', compression=zipfile.ZIP_DEFLATED) as new_zip:
         for file_format in file_formats:
-            new_zip.write(base_dir + file_format, arcname=title + file_format)
-            os.remove(base_dir + file_format)
+            new_zip.write(folder_path + file_name + file_format, arcname=file_name + file_format)
+            os.remove(folder_path + file_name + file_format)
 
 
 # if __name__ == '__main__':

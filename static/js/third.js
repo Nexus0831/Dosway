@@ -1,8 +1,13 @@
 $('#third-form').submit(function (event) {
     let line = '';
     const elements = document.getElementsByName('elements');
+    const tableBody = document.getElementById('table-body');
+    const tr = document.createElement('tr');
 
     for (let i = 0; i < elements.length; i++) {
+        const td = document.createElement('td');
+        td.textContent = elements[i].value;
+        tr.appendChild(td);
         line = line + elements[i].value + ',';
         elements[i].value = '';
     }
@@ -12,7 +17,9 @@ $('#third-form').submit(function (event) {
     line = localStorage.getItem('text') + line;
 
     localStorage.setItem('text', line);
-    console.log(localStorage.getItem('text'));
+
+    tableBody.appendChild(tr);
+
     return false
 });
 

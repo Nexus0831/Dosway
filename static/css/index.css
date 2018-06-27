@@ -45,7 +45,7 @@ select:invalid {
 .card-container {
     width: 100%;
     display: grid;
-    grid-template-rows: 80px 120px 1fr 80px;
+    grid-template-rows: 80px 120px 1fr 1fr 16px;
     grid-template-columns: 24px 1fr 24px;
 }
 
@@ -80,12 +80,18 @@ select:invalid {
     align-items: center;
     flex-direction: column;
 }
-.card-button {
+.card-bottom {
     grid-row: 4 / 5;
     grid-column: 2 / 3;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    min-height: 80px;
+}
+
+.custom-table {
+    margin-bottom: 24px;
 }
 
 .filed-label {
