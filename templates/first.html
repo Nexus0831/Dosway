@@ -2,9 +2,17 @@
 {% block form %}
     <form class="card-form" id="first-form" method="post" action={{ url_for('key_names') }}>
         <div class="filed-container">
-                        <span class="kyoto filed-label">
-                            タイトル
-                        </span>
+            <div class="line" style="margin-bottom: 16px"></div>
+        </div>
+        <div class="filed-container">
+            <span class="kyoto my-title" style="margin-bottom: 16px">
+                まずは、ファイルの名前とデータの項目数を入力してなぁ
+            </span>
+        </div>
+        <div class="filed-container">
+            <span class="kyoto filed-label">
+                タイトル
+            </span>
             <div class="input-field" style="width: 50%">
                 <input type="text" name="title" id="autocomplete-input" class="autocomplete validate"
                        pattern="^([a-zA-Z0-9]{8,})$" required/>
@@ -15,9 +23,9 @@
         </div>
 
         <div class="filed-container">
-                        <span class="kyoto filed-label">
-                            データ項目数
-                        </span>
+            <span class="kyoto filed-label">
+                データ項目数
+            </span>
             <div class="input-field" style="width: 50%">
                 <input type="text" name="column" id="autocomplete-input" class="autocomplete validate"
                        pattern="^[0-9]+$" required/>

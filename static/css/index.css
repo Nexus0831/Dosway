@@ -29,6 +29,12 @@ select:invalid {
     grid-column: 2 / 3;
 }
 
+.line {
+    height: 2px;
+    width: 100%;
+    background-color: #eeeeee;
+}
+
 .grid-container {
     width: 100%;
     display: grid;

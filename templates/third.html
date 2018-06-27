@@ -1,6 +1,14 @@
 {% extends "base.html" %}
 {% block form %}
     <form class="card-form" id="third-form" method="post">
+        <div class="filed-container">
+            <div class="line" style="margin-bottom: 16px"></div>
+        </div>
+        <div class="filed-container">
+            <span class="kyoto my-title" style="margin-bottom: 16px">
+                最後は、項目の値を入力してなぁ　日本語も使えんでぇ
+            </span>
+        </div>
         {% for name in names %}
             <div class="filed-container">
                 <span class="kyoto filed-label">
