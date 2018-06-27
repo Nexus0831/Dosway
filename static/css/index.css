@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 html {
-    font-family: 'HannariMincho' !important;
+    font-family: 'Hannari' !important;
 }
 
 body {
@@ -13,18 +13,18 @@ select:invalid {
 }
 
 @font-face {
-  font-family: 'HannariMincho';
+  font-family: 'Hannari';
   src: url(/static/font/Hannari.otf) format('opentype');
 }
 
 .my-title {
-    font-family: 'HannariMincho' !important;
+    font-family: 'Hannari' !important;
     text-align: center;
     font-size: 2em;
 }
 
 .kyoto {
-    font-family: 'HannariMincho' !important;
+    font-family: 'Hannari' !important;
 }
 
 .child {
