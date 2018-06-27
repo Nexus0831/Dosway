@@ -41,9 +41,7 @@ def download():
     download_file_name = base_dir + file_name + '.zip'
     download_file = file_name + '.zip'
 
-    send_file(download_file_name, as_attachment=True, attachment_filename=download_file, mimetype='application/zip')
-
-    return render_template('first.html')
+    return send_file(download_file_name, as_attachment=True, attachment_filename=download_file, mimetype='application/zip')
 
 
 if __name__ == '__main__':
