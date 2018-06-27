@@ -29,7 +29,7 @@ def create_json(file_name, folder_path):
 
         for line in reader:
             result.append(line)
-        dict["datas"] = result
+        dict["data"] = result
         json_file = open(folder_path + file_name + '.json', 'w', encoding='utf-8')
         json.dump(dict, json_file, indent=4, sort_keys=True, separators=(',', ': '), ensure_ascii=False)
         json_file.close()
@@ -47,7 +47,7 @@ def create_yaml(file_name, folder_path):
         yaml.add_representer(collections.OrderedDict, represent_odict)
         for line in reader:
             result.append(line)
-        dict["datas"] = result
+        dict["data"] = result
         yaml_file = open(folder_path + file_name + '.yml', 'w', encoding='utf-8')
         yaml.dump(dict, yaml_file, allow_unicode=True, default_flow_style=False)
 
@@ -63,7 +63,7 @@ def create_xml(file_name, folder_path):
         dict = {
             'root': {
                 'id': file_name,
-                'datas': result
+                'data': result
             }
         }
 
