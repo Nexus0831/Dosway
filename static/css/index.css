@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+html {
+    font-family: 'HannariMincho' !important;
+}
 
 body {
     background-color: #eeeeee;
