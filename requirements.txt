@@ -1,0 +1,11 @@
+click==6.7
+et-xmlfile==1.0.1
+flask==1.0.2
+itsdangerous==0.24
+jdcal==1.4
+jinja2==2.10
+markupsafe==1.0
+openpyxl==2.5.4
+pyyaml==4.1
+werkzeug==0.14.1
+xmltodict==0.11.0

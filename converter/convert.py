@@ -29,14 +29,14 @@ def create_json(file_name, folder_path):
 
         for line in reader:
             result.append(line)
-        dict["items"] = result
+        dict["datas"] = result
         json_file = open(folder_path + file_name + '.json', 'w', encoding='utf-8')
         json.dump(dict, json_file, indent=4, sort_keys=True, separators=(',', ': '), ensure_ascii=False)
         json_file.close()
 
 
 def represent_odict(dumper, instance):
-    return dumper.represent_mapping('tag:yaml.org,2002:map', instance.items())
+    return dumper.represent_mapping('tag:yaml.org,2002:map', instance.datas())
 
 
 def create_yaml(file_name, folder_path):
@@ -47,7 +47,7 @@ def create_yaml(file_name, folder_path):
         yaml.add_representer(collections.OrderedDict, represent_odict)
         for line in reader:
             result.append(line)
-        dict["items"] = result
+        dict["datas"] = result
         yaml_file = open(folder_path + file_name + '.yml', 'w', encoding='utf-8')
         yaml.dump(dict, yaml_file, allow_unicode=True, default_flow_style=False)
 
@@ -63,7 +63,7 @@ def create_xml(file_name, folder_path):
         dict = {
             'root': {
                 'id': file_name,
-                'items': result
+                'datas': result
             }
         }
 
