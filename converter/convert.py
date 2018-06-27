@@ -36,7 +36,7 @@ def create_json(file_name, folder_path):
 
 
 def represent_odict(dumper, instance):
-    return dumper.represent_mapping('tag:yaml.org,2002:map', instance.datas())
+    return dumper.represent_mapping('tag:yaml.org,2002:map', instance.items())
 
 
 def create_yaml(file_name, folder_path):
