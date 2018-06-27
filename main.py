@@ -9,16 +9,16 @@ def index():
     return render_template('first.html')
 
 
-@app.route('/itemName', methods=['POST'])
-def item_name():
+@app.route('/keyNames', methods=['POST'])
+def key_names():
     count = int(request.form['column'])
     column_count = [i+1 for i in range(count)]
 
     return render_template('second.html', column_count=column_count)
 
 
-@app.route('/elementName', methods=['POSt'])
-def element_name():
+@app.route('/itemNames', methods=['POSt'])
+def item_names():
     names = request.form.getlist('key-names[]')
 
     return render_template('third.html', names=names)
@@ -29,6 +29,7 @@ def download():
     file_name = request.form['title']
     text = request.form['text']
     base_dir = app.root_path + '/download/'
+
     converter.convert.remove_files(base_dir)
     converter.convert.create_csv(file_name, text, base_dir)
     converter.convert.create_tsv(file_name, text, base_dir)
