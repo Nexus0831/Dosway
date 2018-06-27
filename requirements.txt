@@ -1,6 +1,7 @@
 click==6.7
 et-xmlfile==1.0.1
 flask==1.0.2
+gunicorn==19.8.1
 itsdangerous==0.24
 jdcal==1.4
 jinja2==2.10
