@@ -28,6 +28,7 @@ def download():
     title = request.form['title']
     text = request.form['text']
     converter.convert.create_csv(title, text, app.root_path)
+    converter.convert.create_tsv(title, text, app.root_path)
     converter.convert.create_json(title, app.root_path)
     converter.convert.create_yaml(title, app.root_path)
     converter.convert.create_zip(title, app.root_path)
