@@ -33,6 +33,7 @@ def download():
     converter.convert.create_tsv(file_name, text, base_dir)
     converter.convert.create_json(file_name, base_dir)
     converter.convert.create_yaml(file_name, base_dir)
+    converter.convert.create_xml(file_name, base_dir)
     converter.convert.create_zip(file_name, base_dir)
 
     download_file_name = base_dir + file_name + '.zip'

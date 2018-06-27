@@ -1,18 +1,14 @@
 import csv
 import json
 import yaml
-import xml
+import xmltodict
+import openpyxl
 import zipfile
 import os
 import collections
 
-indent = 2
 
-file_formats = ('.csv', '.tsv', '.json', '.yml')
-
-
-def get_indent():
-    return " " * indent
+file_formats = ('.csv', '.tsv', '.json', '.yml', '.xml')
 
 
 def create_csv(file_name, content, folder_path):
@@ -54,6 +50,25 @@ def create_yaml(file_name, folder_path):
         dict["items"] = result
         yaml_file = open(folder_path + file_name + '.yml', 'w', encoding='utf-8')
         yaml.dump(dict, yaml_file, allow_unicode=True, default_flow_style=False)
+
+
+def create_xml(file_name, folder_path):
+    result = []
+    with open(folder_path + file_name + '.csv', 'r', encoding='utf-8') as csv_file:
+        reader = csv.DictReader(csv_file)
+
+        for line in reader:
+            result.append(line)
+
+        dict = {
+            'root': {
+                'id': file_name,
+                'items': result
+            }
+        }
+
+        xml_file = open(folder_path + file_name + '.xml', 'w', encoding='utf-8')
+        xmltodict.unparse(dict, xml_file)
 
 
 def create_zip(file_name, folder_path):
