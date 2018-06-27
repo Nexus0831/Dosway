@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+@font-face {
+  font-family: 'Hannari';
+  src: url(/.fonts/Hannari.otf) format('opentype');
+}
+
 html {
     font-family: 'Hannari' !important;
 }
@@ -10,11 +15,6 @@ body {
 
 select:invalid {
     background-color: #9C1A1C;
-}
-
-@font-face {
-  font-family: 'Hannari';
-  src: url(/static/font/Hannari.otf) format('opentype');
 }
 
 .my-title {
