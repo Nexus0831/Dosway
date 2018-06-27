@@ -20,7 +20,8 @@ if __name__ == '__main__':
     print('test start')
     file_name = 'firstTest'
     # converter.convert.create_yaml(file_name, '../testSheets/')
-    converter.convert.create_xml(file_name, '../testSheets/')
+    # converter.convert.create_xml(file_name, '../testSheets/')
+    converter.convert.remove_files('../testSheets/')
 
     # print(xml_file.readlines())
     print('test end')

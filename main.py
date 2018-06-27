@@ -29,6 +29,7 @@ def download():
     file_name = request.form['title']
     text = request.form['text']
     base_dir = app.root_path + '/download/'
+    converter.convert.remove_files(base_dir)
     converter.convert.create_csv(file_name, text, base_dir)
     converter.convert.create_tsv(file_name, text, base_dir)
     converter.convert.create_json(file_name, base_dir)
@@ -39,7 +40,9 @@ def download():
     download_file_name = base_dir + file_name + '.zip'
     download_file = file_name + '.zip'
 
-    return send_file(download_file_name, as_attachment=True, attachment_filename=download_file, mimetype='application/zip')
+    send_file(download_file_name, as_attachment=True, attachment_filename=download_file, mimetype='application/zip')
+
+    return render_template('first.html')
 
 
 if __name__ == '__main__':

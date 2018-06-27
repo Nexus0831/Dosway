@@ -68,7 +68,7 @@ def create_xml(file_name, folder_path):
         }
 
         xml_file = open(folder_path + file_name + '.xml', 'w', encoding='utf-8')
-        xmltodict.unparse(dict, xml_file)
+        xmltodict.unparse(dict, xml_file, pretty=True)
 
 
 def create_zip(file_name, folder_path):
@@ -76,6 +76,12 @@ def create_zip(file_name, folder_path):
         for file_format in file_formats:
             new_zip.write(folder_path + file_name + file_format, arcname=file_name + file_format)
             os.remove(folder_path + file_name + file_format)
+
+
+def remove_files(folder_path):
+    for root, dirs, files in os.walk(folder_path, topdown=False):
+        for name in files:
+            os.remove(os.path.join(root, name))
 
 
 # if __name__ == '__main__':
