@@ -12,10 +12,10 @@ select:invalid {
     background-color: #9C1A1C;
 }
 
-@font-face {
-  font-family: 'HannariMincho';
-  src: url(/static/font/Hannari.otf) format('opentype');
-}
+/*@font-face {*/
+  /*font-family: 'HannariMincho';*/
+  /*src: url(/static/font/Hannari.otf) format('opentype');*/
+/*}*/
 
 .my-title {
     font-family: 'HannariMincho' !important;
